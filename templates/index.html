@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Server Response</title>
+</head>
+<body>
+    <h1>Node.js Server Response</h1>
+    <div id="response-data"></div>
+
+    <script>
+        // サーバーからのデータを表示するためのJavaScript
+        fetch('/api/html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('response-data').innerHTML = data;
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
