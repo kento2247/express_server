@@ -1,0 +1,48 @@
+<!-- views/404.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>404 Not Found</title>
+</head>
+<body>
+
+    <section class="hero is-danger is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    404 Not Found
+                </h1>
+                <h2 class="subtitle">
+                    The requested page does not exist. Available endpoints:
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                <% endpoints.forEach(endpoint=> { %>
+                    <div class="column is-half">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title">
+                                    <a href="<%= endpoint.path %>">
+                                        <%= endpoint.method %>
+                                            <%= endpoint.path %>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

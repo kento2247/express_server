@@ -1,0 +1,14 @@
+// tsconfig.json
+
+{
+  "compilerOptions": {
+    "target": "es6", // コンパイル後のJavaScriptのバージョン
+    "module": "commonjs", // モジュール形式
+    "outDir": "./dist", // コンパイル結果の出力先
+    "rootDir": "./src", // ソースコードのルートディレクトリ
+    "strict": true, // 厳格な型チェックを有効にする
+    "esModuleInterop": true // ESモジュールとしてインポートする際にInteropを有効にする
+  },
+  "include": ["src/**/*.ts"], // コンパイルするファイルのパスパターン
+  "exclude": ["node_modules"] // コンパイルから除外するディレクトリ
+}
