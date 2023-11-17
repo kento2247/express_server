@@ -4,7 +4,7 @@ import express from "express"; // Import IRoute from express
 import fs from "fs";
 import path from "path";
 
-import { getHostIpAddress } from "./utils";
+import { getHostIpAddress } from "./utils/getHostIpAddress";
 
 const CONFIG = require("../config/server_config.json");
 const port = CONFIG.port;
@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 // 静的ファイルの提供
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/api/html", (req, res) => {
+app.get("/", (req, res) => {
   fs.readFile("../static/html/toppage.html", "utf8", (err, data) => {
     if (err) {
       res.status(500).send("Internal Server Error");
